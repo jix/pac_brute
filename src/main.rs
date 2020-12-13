@@ -320,7 +320,7 @@ impl Bruteforcer {
         let prefix_len = 64 - suffix_len;
         let mid_bits = chunk_bits - BLOCK_BITS;
 
-        let bar = ProgressBar::new(1 << prefix_len);
+        let bar = ProgressBar::new(1 << (prefix_len - 1));
         bar.set_style(ProgressStyle::default_bar().template(BAR_TEMPLATE));
 
         // One bit fewer, as the key is always odd
